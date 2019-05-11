@@ -19,4 +19,9 @@
 
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        a, b, m = *sorted((nums1, nums2), key=len), (len(nums1) + len(nums2) - 1) // 2
+        self.__class__.__getitem__ = lambda self, i: m-i-1 < 0 or a[i] >= b[m-i-1]
+        i = bisect.bisect_left(self, True, 0, len(a))
+        r = sorted(a[i:i+2] + b[m-i:m-i+2])
+        return (r[0] + r[1 - (len(a) + len(b)) % 2]) / 2
         
