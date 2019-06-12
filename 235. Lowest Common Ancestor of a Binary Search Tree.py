@@ -70,9 +70,8 @@ class Solution:
             root = (root.left, root.right)[p.val > root.val]
         return root
 
-# if __name__ == '__main__':
-#     s = Solution()
-#     # [6,2,8,0,4,7,9,null,null,3,5]
-#     root = stringToTreeNode('[6,2,8,0,4,7,9,null,null,3,5]')
-#     p,q = TreeNode(2), TreeNode(8)
-#     s.lowestCommonAncestor(root, p, q)
+if __name__ == '__main__':
+    s = Solution()
+    root = stringToTreeNode('[6,2,8,0,4,7,9,null,null,3,5]')
+    p,q = TreeNode(2), TreeNode(4)
+    s.lowestCommonAncestor(root, p, q)
